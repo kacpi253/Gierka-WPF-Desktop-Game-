@@ -1,0 +1,193 @@
+﻿<UserControl x:Class="Gierka.UI.Gra"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Gierka.UI"
+        mc:Ignorable="d"
+       >
+
+    <UserControl.Resources>
+        <Style x:Key="GameButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#FF6D1E25"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="#FF922C39"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FFC8505C"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="#FF922C39"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="LocationButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#FF6D1E25"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Width" Value="180"/>
+            <Setter Property="Height" Value="90"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="#FF922C39"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                         BorderBrush="{TemplateBinding BorderBrush}" 
+                         BorderThickness="{TemplateBinding BorderThickness}" 
+                         CornerRadius="20">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FFC8505C"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="#FF922C39"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+
+        <Style x:Key="ResourceTextBlock" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Top Resource Bar -->
+        <Border Grid.Row="0" Background="#FF6D1E25" Padding="15" >
+            <Viewbox Stretch="Uniform">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Punkty Polityczne:" Style="{StaticResource ResourceTextBlock}"/>
+                    <TextBlock x:Name="Wyswietleniepolitycznych" Text="150" Style="{StaticResource ResourceTextBlock}" Margin="5,0,30,0" Foreground="#FFD700"/>
+
+                    <TextBlock Text="Punkty Militarne:" Style="{StaticResource ResourceTextBlock}"/>
+                    <TextBlock x:Name="Wyswietleniemilitarnych" Text="420" Style="{StaticResource ResourceTextBlock}" Margin="5,0,30,0" Foreground="#FFD700"/>
+
+                    <TextBlock Text="Złotówki:" Style="{StaticResource ResourceTextBlock}"/>
+                    <TextBlock x:Name="Wyswietleniezlotowek" Text="980" Style="{StaticResource ResourceTextBlock}" Margin="5,0,30,0" Foreground="#FFD700"/>
+
+                    <TextBlock Text="Funty Izraelskie:" Style="{StaticResource ResourceTextBlock}"/>
+                    <TextBlock x:Name="WyswietlenieFuntow" Text="55" Style="{StaticResource ResourceTextBlock}" Margin="5,0,10,0" Foreground="#FFD700"/>
+
+                    <TextBlock Text="Punkty Akcji:" Style="{StaticResource ResourceTextBlock}"/>
+                    <TextBlock x:Name="WyswietlenieAkcji" Text="4" Style="{StaticResource ResourceTextBlock}" Margin="5,0,10,0" Foreground="Cyan"/>
+                </StackPanel>
+            </Viewbox>
+        </Border>
+
+        <!-- Main Game Area -->
+        <Border Grid.Row="1">
+            <Border.Background>
+                <ImageBrush ImageSource="/Gierka.UI;component/Images/PZPR.png" Stretch="Fill"/>
+            </Border.Background>
+
+            <!-- Viewbox for responsive content scaling -->
+            <Viewbox Stretch="Uniform">
+                <Grid Width="1000" Height="600">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Top Left: Time Display -->
+                    <Border Grid.Row="0" Grid.Column="0" Background="#CC922C39" CornerRadius="10" Margin="10,0,0,0" Padding="10" VerticalAlignment="Center" HorizontalAlignment="Left" Height="80" Width="141">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Rok: " Foreground="White" FontWeight="Bold" FontSize="20"/>
+                                <TextBlock x:Name="rok" Text="1980" Foreground="White" FontSize="20"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Pora: " Foreground="White" FontWeight="Bold" FontSize="20"/>
+                                <TextBlock x:Name="miesiac" Text="Wiosna" Foreground="White" FontSize="20"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Below Time: Next Turn -->
+                    <Button Content="Następna Tura" Height="50" Width="120" Grid.Row="1" Grid.Column="0"
+                            HorizontalAlignment="Left" VerticalAlignment="Top" Name="Turn" Click="NextTurn" Style="{StaticResource GameButtonStyle}" Margin="10,0,0,0"/>
+
+                    <!-- Top Right: Menu Button -->
+                    <Button Content="Menu" Height="40" Width="80" Grid.Row="0" Grid.Column="4"
+                            HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"
+                            Click="WrocDoMenu" Background="Gray" Style="{StaticResource GameButtonStyle}"/>
+
+                    <Button Content="Dodaj 10 zł" Height="40" Width="100" Grid.Row="1" Grid.Column="4"
+                            HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,10,0" Name="Pieniadze" Click="DodajPieniadze" Style="{StaticResource GameButtonStyle}"/>
+                    <Button Content="Dodaj PP" Height="40" Width="100" Grid.Row="2" Grid.Column="4"
+                            HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,10,0" Name="Polityczny" Click="DodajPP" Style="{StaticResource GameButtonStyle}"/>
+                    <Button Content="Dodaj PM" Height="40" Width="100" Grid.Row="2" Grid.Column="4"
+                            HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,50,10,0" Name="PM" Click="DodajPM" Style="{StaticResource GameButtonStyle}"/>
+                    <Button Content="Dodaj PS" Height="40" Width="100" Grid.Row="3" Grid.Column="4"
+         HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,10,0" Name="PS" Click="DodajPS" Style="{StaticResource GameButtonStyle}"/>
+                    <Button Content="Dodaj PI" Height="40" Width="100" Grid.Row="3" Grid.Column="4"
+HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,50,10,0" Name="PI" Click="DodajPI" Style="{StaticResource GameButtonStyle}"/>
+
+                    <Button Content="Dodaj Event" Height="40" Width="100" Grid.Row="4" Grid.Column="4"
+                            HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,50,10,0" Name="EE" Click="Dodajevent" Style="{StaticResource GameButtonStyle}"/>
+
+                    <!-- Rectangle of Locations -->
+                    <!-- LOKACJE-->
+                    <Button Content="Przejdz do gdanska" Grid.Row="2" Grid.Column="1"
+                            HorizontalAlignment="Center" VerticalAlignment="Center" Name="Gdanskk" Click="Gdansk" Style="{StaticResource LocationButtonStyle}"/>
+
+                    <!-- Top Right Corner of Rectangle (Row 2, Col 3) -->
+                    <Button Content="Przejdz do Sejmu"  Grid.Row="2" Grid.Column="3"
+                            HorizontalAlignment="Center" VerticalAlignment="Center" Name="Sejmm" Click="Sejm" Style="{StaticResource  LocationButtonStyle}"/>
+
+                    <!-- Bottom Left Corner of Rectangle (Row 4, Col 1) -->
+                    <Button Content="Przejdz do MON"  Grid.Row="4" Grid.Column="1"
+                            HorizontalAlignment="Center" VerticalAlignment="Center" Name="Monn" Click="Mon" Style="{StaticResource  LocationButtonStyle}"/>
+
+                    <!-- Bottom Right Corner of Rectangle (Row 4, Col 3) -->
+                    <Button Content="KASYNO"  Grid.Row="4" Grid.Column="3"
+                            HorizontalAlignment="Center" VerticalAlignment="Center" Name="Kasynko" Click="OtworzKasyno" Style="{StaticResource  LocationButtonStyle}" FontSize="30"/>
+
+                </Grid>
+            </Viewbox>
+        </Border>
+    </Grid>
+</UserControl>

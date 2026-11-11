@@ -1,0 +1,130 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\BlackJack\podglad.png" />
+    <None Remove="Images\BlackJack\tlo.jpg" />
+    <None Remove="Images\FlappyBird\pipe.png" />
+    <None Remove="Images\FlappyBird\plane.png" />
+    <None Remove="Images\KasynoPoPixelizacji.png" />
+    <None Remove="Images\MonPoPixelizacji.png" />
+    <None Remove="Images\postacie\cyrankiewicz.png" />
+    <None Remove="Images\postacie\gierek.png" />
+    <None Remove="Images\postacie\jagielski.png" />
+    <None Remove="Images\postacie\jarózelski.png" />
+    <None Remove="Images\postacie\korwin.png" />
+    <None Remove="Images\postacie\moczar.png" />
+    <None Remove="Images\postacie\sokolowski.png" />
+    <None Remove="Images\postacie\walentynowicz.png" />
+    <None Remove="Images\postacie\walesa.png" />
+    <None Remove="Images\PZPR.png" />
+    <None Remove="Images\Ruletka\podglad.png" />
+    <None Remove="Images\Ruletka\tlo.png" />
+    <None Remove="Images\SejmPoPixelizacji.png" />
+    <None Remove="Images\StoczniaPoPixelizacji.png" />
+    <None Remove="Images\SymboleAutomat\podglad.png" />
+    <None Remove="Images\SymboleAutomat\symbol_gierek.png" />
+    <None Remove="Images\SymboleAutomat\symbol_lapowka.png" />
+    <None Remove="Images\SymboleAutomat\symbol_mon.png" />
+    <None Remove="Images\SymboleAutomat\symbol_stocznia.png" />
+    <None Remove="Images\SymboleAutomat\symbol_zeton.png" />
+    <None Remove="Images\SymboleAutomat\tlo.jpg" />
+    <None Remove="Images\symbol_gierek.png" />
+    <None Remove="Images\symbol_lapowka.png" />
+    <None Remove="Images\symbol_mon.png" />
+    <None Remove="Images\symbol_stocznia.png" />
+    <None Remove="Images\symbol_zeton.png" />
+    <None Remove="Images\tlo.png" />
+    <None Remove="Images\tlokasyno.jpg" />
+    <None Remove="Images\tymczasowe-tlo.png" />
+    <None Remove="Images\tymczasowetlo.png" />
+    <None Remove="Music\casino.mp3" />
+    <None Remove="Music\LInternationale %28Instrumental Version%29.mp3" />
+    <None Remove="Music\lofi.mp3" />
+    <None Remove="Music\March of the Defenders of Moscow %28Extended Parade Instrumental%29.mp3" />
+    <None Remove="Music\Uz Maršala Tita - With Marshal Tito %28Instrumental%29.mp3" />
+    <None Remove="Music\Варшавянка - Warszawianka %28Instrumental%29.mp3" />
+    <None Remove="Music\Марш артиллеристов - Soviet Artillerymans March %28Instrumental%29.mp3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Music\casino.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Music\LInternationale (Instrumental Version).mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Music\lofi.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Images\BlackJack\podglad.png" />
+    <Resource Include="Images\BlackJack\tlo.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\FlappyBird\pipe.png" />
+    <Resource Include="Images\FlappyBird\plane.png" />
+    <Resource Include="Images\postacie\cyrankiewicz.png" />
+    <Resource Include="Images\postacie\gierek.png" />
+    <Resource Include="Images\postacie\jagielski.png" />
+    <Resource Include="Images\postacie\jarózelski.png" />
+    <Resource Include="Images\postacie\korwin.png" />
+    <Resource Include="Images\postacie\moczar.png" />
+    <Resource Include="Images\postacie\sokolowski.png" />
+    <Resource Include="Images\postacie\walentynowicz.png" />
+    <Resource Include="Images\postacie\walesa.png" />
+    <Resource Include="Images\Ruletka\podglad.png" />
+    <Resource Include="Images\Ruletka\tlo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\SymboleAutomat\podglad.png" />
+    <Resource Include="Images\SymboleAutomat\symbol_gierek.png" />
+    <Resource Include="Images\SymboleAutomat\symbol_lapowka.png" />
+    <Resource Include="Images\SymboleAutomat\symbol_mon.png" />
+    <Resource Include="Images\SymboleAutomat\symbol_stocznia.png" />
+    <Resource Include="Images\SymboleAutomat\symbol_zeton.png" />
+    <Resource Include="Images\SymboleAutomat\tlo.jpg" />
+    <Resource Include="Images\tlokasyno.jpg" />
+    <Resource Include="Images\tymczasowetlo.png" />
+    <Resource Include="Music\March of the Defenders of Moscow (Extended Parade Instrumental).mp3">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Music\Uz Maršala Tita - With Marshal Tito (Instrumental).mp3">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Music\Варшавянка - Warszawianka (Instrumental).mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Music\Марш артиллеристов - Soviet Artillerymans March (Instrumental).mp3">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Gierka.Core\Gierka.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\KasynoPoPixelizacji.png" />
+    <Resource Include="Images\MonPoPixelizacji.png" />
+    <Resource Include="Images\PZPR.png" />
+    <Resource Include="Images\SejmPoPixelizacji.png" />
+    <Resource Include="Images\StoczniaPoPixelizacji.png" />
+    <Resource Include="Images\tlo.png" />
+  </ItemGroup>
+
+</Project>

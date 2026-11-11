@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="Gierka.UI.MainMenuControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" >
+
+    <UserControl.Resources>
+        <Style x:Key="SimpleLoginButton" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#FF922C39"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Margin" Value="0,0,0,0"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FFC8505C"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="#FF6D1E25"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Margin" Value="0,5,0,15"/>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Images/tymczasowetlo.png" Opacity="50" ></ImageBrush>
+                      
+        </Grid.Background>
+
+    
+ 
+    
+    
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+
+        <TextBlock FontSize="24" Margin="0,0,0,10" FontWeight="Bold" Foreground="White">Witaj w Gierce!</TextBlock> 
+        
+      
+
+        <Button Content="START GRY" Width="150" Height="40" Margin="0,0,0,10" Click="Wejdz_do_gry"  Style="{StaticResource SimpleLoginButton}" FontWeight="Bold" />
+        <Button Content="Ustawienia" Width="150" Height="40" Margin="0,0,0,10"
+                Click="Przejdz_do_ustawien"  Style="{StaticResource SimpleLoginButton}" />
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+            
+            <Button Content="Ranking" Width="70" Height="40" Margin="0,0,10,0"
+            Click="Przejdz_do_rankingu"  Style="{StaticResource SimpleLoginButton}" FontSize="14" />
+            <Button Width="70" Height="40"
+                 Click="Wyjdz_z_gry" Style="{StaticResource SimpleLoginButton}" 
+                 FontSize="11" VerticalAlignment="Top">
+                <TextBlock Text="Wyjdź z gry" TextAlignment="Center" TextWrapping="Wrap" />
+            </Button>
+
+        </StackPanel>
+
+    </StackPanel>
+    </Grid>
+</UserControl>
